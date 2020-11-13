@@ -43,3 +43,32 @@ python new_formulation.py --traj_num TRAJ_NUM --results_path RESULTS_PATH --soln
 ```
 
 Here `soln_path` refers to the path where the initial solver trajectories are stored. 
+
+
+#### Final Configuration Perturbation and Mid Point Perturbation
+
+In order to run the code, use the following:
+
+```
+python launch.py 2
+```
+
+`2` here indicates the perturbration level. Look at the table below to select a valid perturbation . Now to generate historgram plots shown in paper, use:
+
+```
+python plot_metrics.py 2
+```
+
+Dataset | location | command line input | perturbation
+--- | --- | --- | ---
+small | dataset/dataset_small.npy | 1 | 0.0-0.1m
+medium | dataset/dataset_medium.npy | 2 | 0.1-0.2m
+large | dataset/dataset_large.npy | 3 | 0.2-0.3m
+xlarge | dataset/dataset_xlarge.npy | 4 | 0.3-0.4m
+
+
+To generate median, 25 percentile and 75 percentile plots shown in paper use:
+
+```
+python plot_metrics.py -1
+```
